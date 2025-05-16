@@ -32,7 +32,7 @@ final class ArticleController extends AbstractController
         }
 
         $comments = $commentaireRepository->findBy(['article' => $article], ['id' => 'DESC']);
-        
+
         $category = $article->getCategory();
         return $this->render('article/show.html.twig', [
             'article' => $article,

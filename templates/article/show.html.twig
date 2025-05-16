@@ -19,6 +19,7 @@
             <li>
                 <h4>{{ comment.username }}</h4>
                 <p>{{ comment.contenu }}</p>
+                <small>{{ comment.createdAt|date('d/m/Y') }}</small>
             </li>
             {% endfor %}
         </ul>
