@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+
+<div>
+    <h1>Bienvenue sur TechBlog !</h1>
+    <h2>Vous pourrez y trouver des article sur la Tech WAAAA TROP BIEN la frappe en vrai JE DIS OUI</h2>
+</div>
+
+<div>
+    <h3>Derniers articles</h3>
+    <ul>
+        {% for article in articles %}
+            <li>
+                <h4>{{ article.titre }}</h4>
+                <a href="{{ path('app_article_show', {'id':article.id}) }}">Lire plus</a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

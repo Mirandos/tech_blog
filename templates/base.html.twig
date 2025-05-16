@@ -11,7 +11,20 @@
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
+    <header>
+        <h1>TechBlog</h1>
+            <img src="{{ asset('images/logo.png') }}" alt="Logo de TechBlog" />
+        <nav>
+            <ul>
+                <li><a href="{{ path('app_home') }}">Accueil</a></li>
+                <li><a href="{{ path('app_about') }}">A propos</a></li>
+            </ul>
+        </nav>
+    </header>
     <body>
         {% block body %}{% endblock %}
     </body>
+    <footer>
+        <p>&copy; 2025 TechBlog</p>
+    </footer>
 </html>

@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ article.titre }}{% endblock %}
+
+{% block body %}
+
+<div>
+    {% for cat in categorys %}
+        <small>{{ cat.titre }}</small>
+    {% endfor %}
+    <h1>{{ article.titre }}</h1>
+    <p>{{ article.contenu }}</p>
+</div>
+<div>
+    {% if comments|length > 0 %}
+        <h3>Commentaires</h3>
+        <ul>
+            {% for comment in comments %}
+            <li>
+                <h4>{{ comment.username }}</h4>
+                <p>{{ comment.contenu }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <h3>Aucun commentaire</h3>
+    {% endif %}
+
+    <h3>Ajouter un commentaire</h3>
+    {{ form_start(commentForm) }}
+    {{ form_widget(commentForm) }}
+    <button type="submit">Envoyer</button>
+    {{ form_end(commentForm) }}
+    
+</div>
+
+{% endblock %}
