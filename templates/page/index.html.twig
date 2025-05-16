@@ -15,6 +15,7 @@
         {% for article in articles %}
             <li>
                 <h4>{{ article.titre }}</h4>
+                <p>Publié le : {{ article.createdAt|date('d/m/Y') }}</p>
                 <a href="{{ path('app_article_show', {'id':article.id}) }}">Lire plus</a>
             </li>
         {% endfor %}
